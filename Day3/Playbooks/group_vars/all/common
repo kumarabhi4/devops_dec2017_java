@@ -1,0 +1,6 @@
+ansible_user: tektutor
+ansible_host: localhost
+ansible_become_user: root
+ansible_become_password: tai@123
+start_value: 1
+

@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+  vars_files:
+     - group_vars/all/custom_myvariable_file
+
+  tasks:
+    - name: Print the custom variable here
+      debug: msg="{{ greeting_msg }}"

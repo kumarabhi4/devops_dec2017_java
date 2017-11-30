@@ -1,0 +1,27 @@
+---
+
+- name: This playbook will demonstrate use of docker modules  
+  hosts: localhost 
+
+  pre_tasks:
+    - name: Start a docker container
+      docker:
+        image: tektutor/ansible-ubuntu
+        name: "server{{item}}"
+        state: started 
+        ports:
+          - "200{{item}}:22"
+          - "250{{item}}:80"
+      with_sequence: start=1 end=3
+
+  tasks:
+      - name: Ping the new docker container
+        ping:
+
+  post_tasks:
+      - name: Remove the docker containers
+        docker:
+           name: "server{{item}}"
+           image: tektutor/ansible-ubuntu
+           state: absent
+        with_sequence: start=1 end=3

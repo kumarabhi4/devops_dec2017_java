@@ -1,0 +1,16 @@
+---
+
+- name: This is play 1 
+  hosts: dev-servers 
+
+  tasks:
+    - name: Install a bunch of software tools
+      debug: msg="This is first play"  
+
+- name: This is play 2 
+  hosts: qa-servers 
+
+  tasks:
+    - name: Install a bunch of software tools
+      debug: msg="This is second play"  
+

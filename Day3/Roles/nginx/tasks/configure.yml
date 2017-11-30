@@ -1,0 +1,13 @@
+---
+
+- name: Configure nginx web server in Ubuntu server
+  copy: src=nginx_ubuntu.conf dest=/etc/nginx/nginx.conf
+  when: ( ansible_os_family == "Debian" and ansible_distribution == "Ubuntu" )
+  notify:
+      - Start nginx web server
+
+- name: Configure nginx web server in CentOS server
+  copy: src=nginx_centos.conf dest=/etc/nginx/nginx.conf
+  when: ( ansible_os_family == "RedHat" and ansible_distribution == "CentOS" )
+  notify:
+      - Start nginx web server

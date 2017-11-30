@@ -1,0 +1,18 @@
+---
+
+- name: This is play 1 
+  hosts: dev-servers 
+
+  tasks:
+    - name: Install a bunch of software tools
+      debug: msg="200{{item}}:22"  
+      with_sequence: start="{{start_value}}" end=10 stride=2
+
+- name: This is play 2 
+  hosts: qa-servers 
+
+  tasks:
+    - name: Install a bunch of software tools
+      debug: msg="800{{item}}:80"  
+      with_sequence: start=1 end=10 stride=2
+

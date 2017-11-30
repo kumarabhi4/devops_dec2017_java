@@ -1,0 +1,13 @@
+---
+
+- name: Deploy web page into nginx Ubuntu server
+  template: src=index.html.j2 dest=/usr/share/nginx/html/index.html
+  when: ( ansible_os_family == "Debian" and ansible_distribution == "Ubuntu" )
+  notify:
+      - Restart nginx web server
+
+- name: Deploy web page into nginx CentOS server
+  template: src=index.html.j2 dest=/usr/share/nginx/html/index.html
+  when: ( ansible_os_family == "RedHat" and ansible_distribution == "CentOS" )
+  notify:
+      - Restart nginx web server

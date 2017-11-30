@@ -1,0 +1,7 @@
+---
+
+- 	name: This play will ping every remote machine present in inventory
+	hosts: all
+  	tasks:
+     	- name: Ping the docker container here
+       	  ping:

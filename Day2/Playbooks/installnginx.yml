@@ -1,0 +1,42 @@
+---
+
+- name: This play will install nginx web server and deploy a web page
+  hosts: all 
+  become: yes
+
+  vars:
+    - automation_language: Ansible
+    - provisioner_tool: Docker
+
+  tasks:
+    - name: Install nginx web server
+      apt: 
+        name: nginx
+        state: present 
+        update_cache: yes
+      notify:
+         - Start the nginx web server
+
+    - name: Configure nginx web server 
+      copy: 
+        src : nginx.conf
+        dest: /etc/nginx/nginx.conf 
+      notify:
+         - Restart the nginx web server
+
+    - name: Deploy boa web page to nginx web server 
+      template: 
+        src : index.html.j2 
+        dest: /usr/share/nginx/html/index.html 
+
+  handlers:
+    - name: Start the nginx web server
+      service: 
+        name: nginx
+        state: started
+
+    - name: Restart the nginx web server
+      service: 
+        name: nginx
+        state: restarted
+

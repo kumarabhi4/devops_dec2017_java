@@ -1,0 +1,45 @@
+Using /etc/ansible/ansible.cfg as config file
+Loaded callback minimal of type stdout, v2.0
+<localhost> ESTABLISH SSH CONNECTION FOR USER: tektutor
+<localhost> SSH: ansible.cfg set ssh_args: (-o)(ControlMaster=auto)(-o)(ControlPersist=60s)
+<localhost> SSH: ANSIBLE_REMOTE_PORT/remote_port/ansible_port set: (-o)(Port=2000)
+<localhost> SSH: ANSIBLE_PRIVATE_KEY_FILE/private_key_file/ansible_ssh_private_key_file set: (-o)(IdentityFile="/home/tai/.ssh/id_rsa")
+<localhost> SSH: ansible_password/ansible_ssh_pass not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)
+<localhost> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User=tektutor)
+<localhost> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)
+<localhost> SSH: PlayContext set ssh_common_args: ()
+<localhost> SSH: PlayContext set ssh_extra_args: ()
+<localhost> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath=/home/tai/.ansible/cp/ansible-ssh-%h-%p-%r)
+<localhost> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o Port=2000 -o 'IdentityFile="/home/tai/.ssh/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=tektutor -o ConnectTimeout=10 -o ControlPath=/home/tai/.ansible/cp/ansible-ssh-%h-%p-%r -tt localhost '( umask 22 && mkdir -p "$( echo $HOME/.ansible/tmp/ansible-tmp-1511856523.56-64433882037805 )" && echo "$( echo $HOME/.ansible/tmp/ansible-tmp-1511856523.56-64433882037805 )" )'
+<localhost> PUT /tmp/tmpKbJtng TO /home/tektutor/.ansible/tmp/ansible-tmp-1511856523.56-64433882037805/ping
+<localhost> SSH: ansible.cfg set ssh_args: (-o)(ControlMaster=auto)(-o)(ControlPersist=60s)
+<localhost> SSH: ANSIBLE_REMOTE_PORT/remote_port/ansible_port set: (-o)(Port=2000)
+<localhost> SSH: ANSIBLE_PRIVATE_KEY_FILE/private_key_file/ansible_ssh_private_key_file set: (-o)(IdentityFile="/home/tai/.ssh/id_rsa")
+<localhost> SSH: ansible_password/ansible_ssh_pass not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)
+<localhost> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User=tektutor)
+<localhost> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)
+<localhost> SSH: PlayContext set ssh_common_args: ()
+<localhost> SSH: PlayContext set sftp_extra_args: ()
+<localhost> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath=/home/tai/.ansible/cp/ansible-ssh-%h-%p-%r)
+<localhost> SSH: EXEC sftp -b - -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o Port=2000 -o 'IdentityFile="/home/tai/.ssh/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=tektutor -o ConnectTimeout=10 -o ControlPath=/home/tai/.ansible/cp/ansible-ssh-%h-%p-%r '[localhost]'
+<localhost> ESTABLISH SSH CONNECTION FOR USER: tektutor
+<localhost> SSH: ansible.cfg set ssh_args: (-o)(ControlMaster=auto)(-o)(ControlPersist=60s)
+<localhost> SSH: ANSIBLE_REMOTE_PORT/remote_port/ansible_port set: (-o)(Port=2000)
+<localhost> SSH: ANSIBLE_PRIVATE_KEY_FILE/private_key_file/ansible_ssh_private_key_file set: (-o)(IdentityFile="/home/tai/.ssh/id_rsa")
+<localhost> SSH: ansible_password/ansible_ssh_pass not set: (-o)(KbdInteractiveAuthentication=no)(-o)(PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey)(-o)(PasswordAuthentication=no)
+<localhost> SSH: ANSIBLE_REMOTE_USER/remote_user/ansible_user/user/-u set: (-o)(User=tektutor)
+<localhost> SSH: ANSIBLE_TIMEOUT/timeout set: (-o)(ConnectTimeout=10)
+<localhost> SSH: PlayContext set ssh_common_args: ()
+<localhost> SSH: PlayContext set ssh_extra_args: ()
+<localhost> SSH: found only ControlPersist; added ControlPath: (-o)(ControlPath=/home/tai/.ansible/cp/ansible-ssh-%h-%p-%r)
+<localhost> SSH: EXEC ssh -C -vvv -o ControlMaster=auto -o ControlPersist=60s -o Port=2000 -o 'IdentityFile="/home/tai/.ssh/id_rsa"' -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o User=tektutor -o ConnectTimeout=10 -o ControlPath=/home/tai/.ansible/cp/ansible-ssh-%h-%p-%r -tt localhost 'LANG=en_IN LC_ALL=en_IN LC_MESSAGES=en_IN /usr/bin/python /home/tektutor/.ansible/tmp/ansible-tmp-1511856523.56-64433882037805/ping; rm -rf "/home/tektutor/.ansible/tmp/ansible-tmp-1511856523.56-64433882037805/" > /dev/null 2>&1'
+dev-server1 | SUCCESS => {
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "data": null
+        }, 
+        "module_name": "ping"
+    }, 
+    "ping": "pong"
+}
